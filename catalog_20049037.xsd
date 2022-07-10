@@ -1,0 +1,450 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <!-- declaring a restriction which can be reused for restricting website link -->
+    <xs:simpleType name="link_res">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="https://.+" />
+        </xs:restriction>
+    </xs:simpleType>
+    <!-- declaring icon element for contact info element-->
+    <xs:element name="icon">
+        <xs:complexType>
+            <xs:simpleContent>
+                <xs:extension base="xs:string">
+                    <xs:attribute ref="iconName" use="required" />
+                </xs:extension>
+            </xs:simpleContent>
+        </xs:complexType>
+    </xs:element>
+    <!-- attribute declaration for icon element-->
+    <xs:attribute type="xs:string" name="iconName" />
+    <!-- declaring phone element for contact info element-->
+    <xs:element name="phone">
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:pattern value="\([0-9]{3}\) [0-9]{3}-[0-9]{4}" /> <!-- follows regex pattern for phone number eg "(044) 554-4206"  -->
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+    <!-- declaring email element for contact info element and using the link restiction-->
+    <xs:element name="email">
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:pattern value="[^@]+@[^\.]+\..+" /> <!-- follows regex pattern for email eg valid:"sdhakz@gmail.com" invalid:"sdhakzgmail.com  invalid:"sdhakz@gmailcom -->
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+    <!-- declaring url element for contact info element and keeping the restriction of the url -->
+    <xs:element name="url" type="link_res" />
+    <!-- declaring sequence for contactInfo element by referencing the elements icon, phone, email and url-->
+    <xs:element name="contactInfo">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="icon" /> <!-- element must appear exactly once -->
+                <xs:element ref="phone" minOccurs="1" maxOccurs="unbounded" /> <!-- element must appear exactly once or more -->
+                <xs:element ref="email" minOccurs="1" maxOccurs="unbounded" /> <!-- element must appear exactly once or more -->
+                <xs:element ref="url" /> <!-- element must appear exactly once -->
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <!-- declaring elements for addressInfo element-->
+    <xs:element name="country" type="xs:string" />
+    <xs:element name="city" type="xs:string" />
+    <xs:element name="street" type="xs:string" />
+    <!-- declaring sequence for contactInfo element by referencing the elements icon, country, city and street-->
+    <xs:element name="addressInfo">
+        <xs:complexType>
+            <xs:sequence>
+                <!-- The following elements must appear exactly once -->
+                <xs:element ref="icon" />
+                <xs:element ref="country" />
+                <xs:element ref="city" />
+                <xs:element ref="street" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <!-- declaring elements for StoreLogo element-->
+    <xs:element name="logo">
+        <xs:complexType>
+            <xs:simpleContent>
+                <xs:extension base="xs:string">
+                    <xs:attribute ref="size" use="optional" />
+                </xs:extension>
+            </xs:simpleContent>
+        </xs:complexType>
+    </xs:element>
+    <!-- attribute declaration for logo element-->
+    <xs:attribute type="xs:string" name="size" />
+    <xs:element name="storeName" type="xs:string" />
+    <!-- declaring sequence for StoreLogo element by referencing the elementslogo and storeName elements-->
+    <xs:element name="StoreLogo">
+        <xs:complexType>
+            <xs:sequence>
+                <!-- The following elements must appear exactly once -->
+                <xs:element ref="logo" />
+                <xs:element ref="storeName" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <!-- declaring element for Socials element-->
+    <xs:element name="social">
+        <xs:complexType>
+            <xs:simpleContent>
+                <xs:extension base="xs:string">
+                    <xs:attribute ref="platform" use="required" />
+                    <xs:attribute ref="link" use="required" />
+                </xs:extension>
+            </xs:simpleContent>
+        </xs:complexType>
+    </xs:element>
+    <!-- attribute declaration for social element-->
+    <xs:attribute type="xs:string" name="platform" />
+    <xs:attribute type="link_res" name="link" />
+    <xs:element name="shopMotto" type="xs:string" />
+    <!-- declaring sequence for Socials element by referencing the social element-->
+    <xs:element name="Socials">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="social" minOccurs="1" maxOccurs="unbounded" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <!-- declaring sequence for StoreBanner element by referencing theStoreLogo, shopMotto and Socials element-->
+    <xs:element name="StoreBanner">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="StoreLogo" /> <!-- element must appear exactly once -->
+                <xs:element ref="shopMotto" /> <!-- element must appear exactly once -->
+                <xs:element ref="Socials" /> <!-- element must appear exactly once -->
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <!-- declaring elements for giftcard element-->
+    <xs:element name="brandLogo">
+        <xs:complexType>
+            <xs:simpleContent>
+                <xs:extension base="xs:string">
+                    <xs:attribute ref="logoName" use="required" />
+                </xs:extension>
+            </xs:simpleContent>
+        </xs:complexType>
+    </xs:element>
+    <!-- attribute declaration for brandLogo element-->
+    <xs:attribute type="xs:string" name="logoName" />
+    <xs:element name="cardImage">
+        <xs:complexType>
+            <xs:simpleContent>
+                <xs:extension base="xs:string">
+                    <xs:attribute ref="imgId" use="required" />
+                </xs:extension>
+            </xs:simpleContent>
+        </xs:complexType>
+    </xs:element>
+    <xs:attribute type="xs:ID" name="imgId" /> <!-- ID type  attribute declaration for cardImage element-->
+    <xs:element name="cost">
+        <xs:complexType>
+            <xs:simpleContent>
+                <xs:extension base="xs:string">
+                    <xs:attribute ref="currency" use="required" />
+                </xs:extension>
+            </xs:simpleContent>
+        </xs:complexType>
+    </xs:element>
+    <!-- attribute declaration for cost element-->
+    <xs:attribute name="currency">
+        <xs:simpleType>
+            <!-- adding restriction for the currency attribute to be either USD or Pounds-->
+            <xs:restriction base="xs:string">
+                <xs:enumeration value="USD" />
+                <xs:enumeration value="Pounds" />
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:attribute>
+    <xs:element name="code">
+        <xs:complexType>
+            <xs:simpleContent>
+                <xs:extension base="xs:string">
+                    <xs:attribute ref="discountPercent" use="optional" />
+                </xs:extension>
+            </xs:simpleContent>
+        </xs:complexType>
+    </xs:element>
+    <!-- adding default value as 0% of the attribute discountPercent-->
+    <xs:attribute type="xs:string" name="discountPercent" default="3%" />
+    <xs:element name="type">
+        <xs:simpleType>
+            <!-- adding restriction for the type element to be either Digital Code or Digital / Physical Code -->
+            <xs:restriction base="xs:string">
+                <xs:enumeration value="Digital Code" />
+                <xs:enumeration value="Digital / Physical Code" />
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+    <xs:element name="subscription">
+        <xs:complexType>
+            <xs:simpleContent>
+                <xs:extension base="xs:string">
+                    <xs:attribute ref="subscriptionTime" use="required" />
+                </xs:extension>
+            </xs:simpleContent>
+        </xs:complexType>
+    </xs:element>
+    <xs:attribute type="xs:duration" name="subscriptionTime" /> <!-- attribute declaration for subscription element-->
+    <xs:element name="emailTime">
+        <xs:complexType>
+            <xs:simpleContent>
+                <xs:extension base="xs:string">
+                    <xs:attribute ref="minMinute" use="optional" />
+                    <xs:attribute ref="maxMinute" use="optional" />
+                </xs:extension>
+            </xs:simpleContent>
+        </xs:complexType>
+    </xs:element>
+    <!-- adding default value as 5 of the attribute minMinute-->
+    <xs:attribute name="minMinute" default="5">
+        <xs:simpleType>
+            <!-- adding restriction for the minMinute attribute to be equal to 1 or greater than 1 and less than 11 positive Integer -->
+            <xs:restriction base="xs:positiveInteger">
+                <xs:minInclusive value="1" />
+                <xs:maxExclusive value="11" />
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:attribute>
+    <!-- adding default value as 10 of the attribute maxMinute-->
+    <xs:attribute name="maxMinute" default="10">
+        <xs:simpleType>
+            <!-- adding restriction for the maxMinute attribute to be equal to 21 or lesser than 21 positive Integer-->
+            <xs:restriction base="xs:positiveInteger">
+                <xs:maxExclusive value="21" />
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:attribute>
+    <xs:element name="value">
+        <xs:complexType>
+            <xs:simpleContent>
+                <xs:extension base="xs:string">
+                    <xs:attribute ref="amount" use="required" />
+                </xs:extension>
+            </xs:simpleContent>
+        </xs:complexType>
+    </xs:element>
+    <!-- attribute declaration for value element-->
+    <xs:attribute name="amount">
+        <xs:simpleType>
+            <xs:restriction base="xs:float">
+                <xs:minExclusive value="0" />
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:attribute>
+    <xs:element name="bonus">
+        <xs:complexType>
+            <xs:simpleContent>
+                <xs:extension base="xs:string">
+                    <xs:attribute ref="bonusAmount" use="required" />
+                </xs:extension>
+            </xs:simpleContent>
+        </xs:complexType>
+    </xs:element>
+    <xs:attribute name="bonusAmount" type="xs:positiveInteger" /> <!-- attribute declaration for bonus element-->
+    <xs:element name="price">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="cost" maxOccurs="2" minOccurs="1" /> <!-- element can appear exactly once or twice -->
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="validity">
+        <xs:complexType>
+            <xs:simpleContent>
+                <xs:extension base="xs:string">
+                    <xs:attribute ref="expiryDate" use="required" />
+                    <xs:attribute ref="duration" use="required" />
+                </xs:extension>
+            </xs:simpleContent>
+        </xs:complexType>
+    </xs:element>
+    <!-- adding date type for the date element-->
+    <xs:attribute type="xs:date" name="expiryDate" />
+    <!-- adding duration type for the date element-->
+    <xs:attribute type="xs:duration" name="duration" />
+    <xs:element name="totalUsers" type="xs:positiveInteger" />
+    <xs:element name="numberOfUsers">
+        <xs:complexType mixed="true">
+            <xs:sequence>
+                <xs:element ref="totalUsers" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="DiscountVouchers">
+        <xs:complexType mixed="true">
+            <xs:sequence>
+                <xs:element ref="code" minOccurs="0" maxOccurs="unbounded" /> <!-- Optional element 0 or more -->
+            </xs:sequence>
+            <xs:attribute ref="availability" use="optional" />
+        </xs:complexType>
+    </xs:element>
+    <xs:attribute type="xs:boolean" name="availability" default="true" /> <!-- attribute declaration for discountVouchers element-->
+    <xs:element name="btn">
+        <xs:complexType>
+            <xs:simpleContent>
+                <xs:extension base="xs:string">
+                    <xs:attribute ref="btnFunction" />
+                </xs:extension>
+            </xs:simpleContent>
+        </xs:complexType>
+    </xs:element>
+    <!-- attribute declaration for btn element-->
+    <xs:attribute name="btnFunction">
+        <xs:simpleType>
+            <!-- adding restriction for the btnFunction attribute to be either Add or Buy-->
+            <xs:restriction base="xs:string">
+                <xs:enumeration value="Add" />
+                <xs:enumeration value="Buy" />
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:attribute>
+    <xs:element name="cardName">
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:maxLength value="25" />
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+    <xs:element name="delivery" type="xs:string" />
+    <xs:element name="region">
+        <xs:complexType>
+            <xs:simpleContent>
+                <xs:extension base="xs:string">
+                    <xs:attribute ref="lockCountry" use="required" />
+                </xs:extension>
+            </xs:simpleContent>
+        </xs:complexType>
+    </xs:element>
+    <!-- adding fixed value for the locked country as "UK"-->
+    <xs:attribute type="xs:string" name="lockCountry" fixed="UK" />
+    <!-- declaring sequence for cardContent element by referencing the elements type, subscription, emailTime, delivery, value, bonus, price, validity, region, numberOfUsers and DiscountVouchers -->
+    <xs:element name="cardContent">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="type" /> <!-- element must appear exactly once -->
+                <xs:element ref="subscription" minOccurs="0" maxOccurs="1" /> <!-- Optional element -->
+                <xs:element ref="emailTime" /> <!-- element must appear exactly once -->
+                <xs:element ref="delivery" minOccurs="0" maxOccurs="1" /> <!-- Optional element -->
+                <xs:element ref="value" minOccurs="0" maxOccurs="1" /> <!-- Optional element -->
+                <xs:element ref="bonus" minOccurs="0" maxOccurs="1" /> <!-- Optional element -->
+                <xs:element ref="price" /> <!-- element must appear exactly once -->
+                <xs:element ref="validity" /> <!-- element must appear exactly once -->
+                <xs:element ref="region" minOccurs="0" maxOccurs="1" /> <!-- Optional element -->
+                <xs:element ref="numberOfUsers" /> <!-- element must appear exactly once -->
+                <xs:element ref="DiscountVouchers" /> <!-- element must appear exactly once -->
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="buttons">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="btn" minOccurs="1" maxOccurs="2" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <!-- declaring sequence for giftcard element by referencing the elements cardName, cardImage, cardContent and buttons -->
+    <xs:element name="giftcard">
+        <xs:complexType>
+            <xs:sequence>
+                <!-- The following elements must appear exactly once -->
+                <xs:element ref="cardName" />
+                <xs:element ref="cardImage" />
+                <xs:element ref="cardContent" />
+                <xs:element ref="buttons" />
+            </xs:sequence>
+            <xs:attribute ref="cardId" use="required" />
+            <xs:attribute ref="company" use="required" />
+            <!-- adding default value for the game attribute as "null"-->
+            <xs:attribute ref="game" use="optional" />
+        </xs:complexType>
+    </xs:element>
+    <xs:attribute name="cardId" type="xs:ID" /> <!-- ID type  attribute declaration for giftcard element-->
+    <xs:attribute name="company">
+        <xs:simpleType>
+            <!-- adding restriction for the company attribute to be either Riot, Electronic Arts, Apple, Google, Sony or Microsoft-->
+            <xs:restriction base="xs:string">
+                <xs:enumeration value="Riot" />
+                <xs:enumeration value="Electronic Arts" />
+                <xs:enumeration value="Apple" />
+                <xs:enumeration value="Google" />
+                <xs:enumeration value="Sony" />
+                <xs:enumeration value="Microsoft" />
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:attribute>
+    <xs:attribute type="xs:string" name="game" /> <!-- attribute declaration for giftcard element-->
+    <xs:element name="brandLogos">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="brandLogo" maxOccurs="unbounded" minOccurs="0" /> <!-- Once or more -->
+            </xs:sequence>
+            <xs:attribute ref="bannerId" use="required" />
+        </xs:complexType>
+    </xs:element>
+    <xs:attribute type="xs:ID" name="bannerId" /> <!-- ID type  attribute declaration for btn element-->
+    <!-- declaring sequence for collection element by referencing the giftcard element -->
+    <xs:element name="collection">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="giftcard" maxOccurs="unbounded" minOccurs="1" /> <!-- Once or more -->
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <!-- declaring sequence for Item element by referencing the elements brandLogos and collection -->
+    <xs:element name="Item">
+        <xs:complexType>
+            <xs:sequence>
+                <!-- The following elements must appear exactly once -->
+                <xs:element ref="brandLogos" />
+                <xs:element ref="collection" />
+            </xs:sequence>
+            <xs:attribute ref="category" use="required" />
+        </xs:complexType>
+    </xs:element>
+    <!-- attribute declaration for Item element-->
+    <xs:attribute name="category">
+        <xs:simpleType>
+            <!-- adding restriction for the company attribute to be either Store, Console, RiotGames or EAHames-->
+            <xs:restriction base="xs:string">
+                <xs:enumeration value="Store" />
+                <xs:enumeration value="Console" />
+                <xs:enumeration value="RiotGames" />
+                <xs:enumeration value="EAGames" />
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:attribute>
+    <!-- declaring sequence for StoreDetails element by referencing the elements contactInfo and addressInfo -->
+    <xs:element name="StoreDetails">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="contactInfo" /> <!-- element must appear exactly once -->
+                <xs:element ref="addressInfo" /> <!-- element must appear exactly once -->
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <!-- declaring sequence for StoreItems element by referencing the elements Item -->
+    <xs:element name="StoreItems">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="Item" maxOccurs="unbounded" minOccurs="1" /> <!-- One or More-->
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="StoreFooter" type="xs:string" />
+    <!-- declaring sequence for Store element by referencing the elements StoreDeatails, StoreBanner, StoreItems and StoreFooter -->
+    <xs:element name="Store">
+        <xs:complexType>
+            <xs:sequence>
+                <!-- The following elements must appear exactly once -->
+                <xs:element ref="StoreDetails" />
+                <xs:element ref="StoreBanner" />
+                <xs:element ref="StoreItems" />
+                <xs:element ref="StoreFooter" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

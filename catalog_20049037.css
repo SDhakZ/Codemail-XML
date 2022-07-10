@@ -1,0 +1,872 @@
+@import url("https://fonts.googleapis.com/css2?family=Libre+Barcode+39+Extended+Text&family=Lobster&family=Noto+Sans:wght@500&family=Patua+One&family=Secular+One&family=Tinos&display=swap");
+/*----------------top bar--------------------*/
+StoreDetails {
+  display: flex;
+  padding: 1.5rem 3rem;
+  position: relative;
+  background-color: black;
+  color: white;
+  box-shadow: 0px 10px 10px #888888;
+  flex-direction: row;
+  font-family: sans-serif;
+}
+
+contactInfo {
+  display: flex;
+  flex: 1;
+}
+
+icon[iconName="ContactIcon"] {
+  background-image: url("./Images/icons/contact.png");
+  background-repeat: no-repeat;
+  background-size: 5.3rem;
+  width: 6rem;
+  height: 1.52rem;
+  background-color: rgb(0, 0, 0);
+  margin-right: 1rem;
+  background-position: center;
+}
+
+phone,
+email,
+url {
+  margin-right: 1rem;
+  cursor: pointer;
+}
+
+phone:hover,
+url:hover,
+email:hover {
+  color: #a3ffe8;
+}
+
+addressInfo {
+  align-items: center;
+  justify-content: right;
+  display: flex;
+  flex: 1;
+}
+
+country,
+city,
+street {
+  margin: 0 1rem 0 1rem;
+  cursor: pointer;
+}
+
+icon[iconName="LocationIcon"] {
+  background-image: url("./Images/icons/location.png");
+  background-repeat: no-repeat;
+  background-size: 1rem;
+  width: 1rem;
+  height: 1.6rem;
+  background-color: black;
+  display: inline-block;
+}
+/*----------------top bar--------------------*/
+
+/*----------------Store Banner styles--------------------*/
+StoreBanner {
+  display: flex;
+  align-items: center;
+  padding: 0.5rem 0rem;
+  background-color: rgb(255, 255, 255);
+  padding-bottom: 2rem;
+  margin: 1.4rem 0 2rem 0;
+  position: relative;
+  box-shadow: 0px 10px 10px #888888;
+  flex-direction: row;
+  border-bottom: 0.5rem ridge #b60000d0;
+}
+
+StoreLogo {
+  margin-left: 2rem;
+  flex: 1;
+  position: relative;
+  display: block;
+  cursor: pointer;
+}
+
+StoreBanner StoreLogo logo {
+  background-image: url("./Images/logo.png");
+  width: max(15rem);
+  background-size: max(14.5rem);
+  height: 9rem;
+  background-repeat: no-repeat;
+  background-position: center;
+  float: left; /* Floating box */
+}
+
+storeName {
+  margin-left: 1rem;
+  font-family: "Secular One";
+  font-size: min(5vw, 3.5rem);
+  margin-top: 4.3rem;
+  position: absolute;
+  background: linear-gradient(-45deg, #9601a3, #6355a4, #e83e3e, #ff1616);
+  background-size: 300%;
+  background-clip: text;
+  -webkit-text-stroke-width: 1.5px;
+  -webkit-text-stroke-color: rgb(43, 43, 43);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: animated_text 5s ease-in-out infinite;
+  -moz-animation: animated_text 5s ease-in-out infinite;
+  -webkit-animation: animated_text 5s ease-in-out infinite;
+}
+/*-----------Animating store name color in keyframes-------------*/
+@keyframes animated_text {
+  0% {
+    background-position: 0px 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0px 50%;
+  }
+}
+
+StoreBanner shopMotto {
+  margin-left: 0rem;
+  font-family: "Lobster", cursive;
+  font-size: min(6vw, 4.1rem);
+  flex: 1;
+  justify-content: center;
+  flex-direction: column;
+  display: flex;
+  text-align: center;
+  padding: 0 1rem;
+}
+/*----------------Social icon designing--------------------*/
+StoreBanner Socials {
+  flex: 1;
+  justify-content: right;
+  flex-direction: row;
+  display: flex;
+}
+
+social[platform="Instagram"],
+social[platform="Facebook"],
+social[platform="linkedIn"] {
+  margin-right: 3rem;
+  width: 4rem;
+  height: 4rem;
+  background-size: 3rem;
+  box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.5);
+  border-radius: 1rem;
+  background-repeat: no-repeat;
+  background-position: center;
+  transition: all 0.5s;
+  cursor: pointer;
+}
+
+social[platform="Instagram"] {
+  background-image: url("./Images/icons/insta.png");
+  background-size: 3rem;
+}
+social[platform="Facebook"] {
+  background-image: url("./Images/icons/facebook.png");
+}
+social[platform="linkedIn"] {
+  background-image: url("./Images/icons/linked.png");
+}
+
+social[platform="Instagram"]:hover,
+social[platform="Facebook"]:hover,
+social[platform="linkedIn"]:hover {
+  transform: scale(1.2);
+}
+
+social[platform="Instagram"]:hover {
+  box-shadow: 0px 5px 20px rgba(216, 21, 255, 0.5);
+}
+
+social[platform="Facebook"]:hover {
+  box-shadow: 0px 5px 20px rgba(21, 122, 255, 0.5);
+}
+
+social[platform="linkedIn"]:hover {
+  box-shadow: 0px 5px 20px rgba(21, 247, 255, 0.5);
+}
+
+/* ----------------------------Riot------------------------------------- */
+
+Item {
+  margin-top: 3rem;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ----------------------------Brand Logos CSS------------------------------------- */
+brandLogos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+/*-----------Animating RiotGames section-------------*/
+Item[category="RiotGames"] {
+  background: linear-gradient(-45deg, #ff2424, #fc5943, #ff7094, #ff2424);
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+}
+/*-----------Animating RiotGames section color in keyframes-------------*/
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+/*-----------Animating Console section color in keyframes-------------*/
+Item[category="Console"] {
+  background: linear-gradient(-45deg, #ffffff, #99ffa6, #70c6ff, #ffffff);
+  background-size: 400% 400%;
+  animation: gradient2 10s ease infinite;
+}
+/*-----------Animating Console section color in keyframes-------------*/
+@keyframes gradient2 {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+/*-----------Animating Store section color in keyframes-------------*/
+Item[category="Store"] {
+  background: linear-gradient(
+    -45deg,
+    hsl(284, 100%, 94%),
+    #e093ff,
+    #70e2ff,
+    #ffffff
+  );
+  background-size: 400% 400%;
+  animation: gradient3 13s ease infinite;
+}
+/*-----------Animating Store section color in keyframes-------------*/
+@keyframes gradient3 {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+/*-----------Animating EAGames section color in keyframes-------------*/
+Item[category="EAGames"] {
+  background: linear-gradient(-45deg, #fff9f9, #fdb2b2, #ffa970, #ff8a3c);
+  background-size: 400% 400%;
+  animation: gradient4 13s ease infinite;
+}
+/*-----------Animating EAGames section color in keyframes-------------*/
+@keyframes gradient4 {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+/*-----------------Brand Logo Banner designing for all banners------------------*/
+brandLogos[bannerId="RiotBanner"] {
+  background-color: red;
+  height: 8rem;
+  box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.5);
+}
+
+brandLogos[bannerId="ConsoleBanner"] {
+  background-color: #72c7c7;
+  height: 10rem;
+  box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.5);
+}
+
+brandLogos[bannerId="StoreBanner"] {
+  background-position: center;
+  background-color: #b15eff;
+  height: 10rem;
+  box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.5);
+}
+
+brandLogos[bannerId="EABanner"] {
+  background-color: #f76e11;
+  height: 8rem;
+  box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.5);
+}
+
+brandLogo {
+  background-repeat: no-repeat;
+  display: flex;
+  background-position: center;
+}
+
+brandLogo[logoName="ValorantLogo"],
+brandLogo[logoName="RiotLogo"],
+brandLogo[logoName="LeagueLogo"] {
+  height: 5rem;
+}
+
+brandLogo {
+  height: 7.1rem;
+  flex: 1;
+}
+
+/*-----------------Brand Logo Assignment in the Brand Logo banners-------------------*/
+brandLogo[logoName="ValorantLogo"] {
+  background-image: url("./Images/Riot/valorant.png");
+  background-size: 5rem;
+  flex: 1;
+}
+
+brandLogo[logoName="RiotLogo"] {
+  background-image: url("./Images/Riot/riot.png");
+  background-size: 15rem;
+  flex: 2;
+}
+
+brandLogo[logoName="LeagueLogo"] {
+  background-image: url("./Images/Riot/league.png");
+  background-size: 14rem;
+  flex: 1;
+}
+
+brandLogo[logoName="XboxLogo"] {
+  background-image: url("./Images/Console/Xbox.png");
+  background-size: 15rem;
+}
+
+brandLogo[logoName="PlaystationLogo"] {
+  background-image: url("./Images/Console/Playstation.png");
+  background-size: 14rem;
+}
+
+brandLogo[logoName="ConsoleLogo"] {
+  background-image: url("./Images/Console/Console.png");
+  background-size: 15rem;
+  flex: 2;
+}
+
+brandLogo[logoName="AppleLogo"] {
+  background-image: url("./Images/Store/apple.png");
+  background-size: 20rem;
+}
+
+brandLogo[logoName="GoogleLogo"] {
+  background-image: url("./Images/Store/google.png");
+  background-size: 17rem;
+}
+
+brandLogo[logoName="StoreLogo"] {
+  background-image: url("./Images/Store/store.png");
+  background-size: 15rem;
+  flex: 2;
+}
+
+brandLogo[logoName="FifaLogo"] {
+  background-image: url("./Images/EA/fifa.png");
+  background-size: 15rem;
+  flex: 1;
+}
+
+brandLogo[logoName="EALogo"] {
+  background-image: url("./Images/EA/EA.png");
+  background-size: 11.5rem;
+  flex: 2;
+}
+
+brandLogo[logoName="UFCLogo"] {
+  background-image: url("./Images/EA/UFC.png");
+  background-size: 15rem;
+  flex: 1;
+}
+
+/*--------------------------------Row---------------------------------------*/
+collection {
+  display: flex;
+  flex: 2;
+  justify-content: center;
+  align-items: center;
+  padding: 0rem 4.5rem;
+  flex-direction: row;
+}
+
+/*---------------------------------------------GiftCard designing---------------------------------------------*/
+giftcard {
+  width: 25rem;
+  height: 25.9rem;
+  background-color: rgb(253, 253, 253);
+  padding: 1rem 2rem 3.5rem 2rem;
+  margin: 1.7em;
+  border-radius: 1rem;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.5s;
+  transition-delay: 0.5s;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 8px;
+  cursor: pointer;
+}
+
+giftcard:hover {
+  height: 36rem;
+  transition-delay: 0s;
+}
+
+giftcard[cardId="xbox_25"],
+giftcard[cardId="xbox_gold"],
+giftcard[cardId="psn_100"],
+giftcard[cardId="ps_gold"] {
+  box-shadow: 0px 5px 20px #488b8f;
+}
+
+giftcard[cardId="google_100"],
+giftcard[cardId="google_50"],
+giftcard[cardId="apple_50"],
+giftcard[cardId="apple_10"] {
+  box-shadow: 0px 5px 20px #f7a5ff;
+}
+
+giftcard[cardId="UFC_100"],
+giftcard[cardId="UFC_10"],
+giftcard[cardId="xbox_25"],
+giftcard[cardId="fifa_100"] {
+  box-shadow: 0px 5px 20px #202020;
+}
+
+giftcard[cardId="google_100"]:hover,
+giftcard[cardId="google_50"]:hover,
+giftcard[cardId="apple_50"]:hover,
+giftcard[cardId="apple_10"]:hover,
+giftcard[cardId="xbox_25"]:hover,
+giftcard[cardId="xbox_gold"]:hover,
+giftcard[cardId="psn_100"]:hover,
+giftcard[cardId="ps_gold"]:hover {
+  box-shadow: #5401a1 0px 10px 25px -5px,
+    rgba(0, 0, 0, 0.726) 0px 10px 20px -5px;
+  height: 27rem;
+  transform: translateY(-1rem);
+}
+
+giftcard[cardId="xbox_25"]:hover,
+giftcard[cardId="xbox_gold"]:hover,
+giftcard[cardId="psn_100"]:hover,
+giftcard[cardId="ps_gold"]:hover {
+  box-shadow: #ffd700 0px 10px 25px -5px,
+    rgba(0, 0, 0, 0.726) 0px 10px 20px -5px;
+}
+
+giftcard[cardId="xbox_25"]:hover {
+  box-shadow: #0a7900 0px 10px 25px -5px,
+    rgba(0, 0, 0, 0.726) 0px 10px 20px -5px;
+}
+
+giftcard[cardId="psn_100"]:hover {
+  box-shadow: #013763 0px 10px 25px -5px,
+    rgba(0, 0, 0, 0.726) 0px 10px 20px -5px;
+}
+/*----------------------------Card Image Styles, Animations and assignment----------------------------*/
+
+cardImage {
+  margin: 0 auto;
+  display: flex;
+  z-index: 1;
+  background-position: center;
+  width: 85%;
+  height: 24rem;
+  background-size: 80%;
+  background-repeat: no-repeat;
+  border-radius: 1rem;
+  position: relative;
+  background-color: rgb(255, 255, 255);
+  transition: all 0.4s;
+  transform: skew(0deg) translateY(0);
+  transition-timing-function: ease-in;
+}
+
+cardImage[imgId="val10"],
+cardImage[imgId="val100"],
+cardImage[imgId="lol25"],
+cardImage[imgId="lol100"] {
+  box-shadow: 0px 5px 20px rgba(128, 0, 0, 0.5);
+}
+
+cardImage[imgId="xbox25"],
+cardImage[imgId="psn100"],
+cardImage[imgId="xboxgold"],
+cardImage[imgId="psgold"] {
+  box-shadow: 0px 5px 20px #add2c9;
+}
+
+cardImage[imgId="apple10"],
+cardImage[imgId="apple50"],
+cardImage[imgId="google50"],
+cardImage[imgId="google100"] {
+  box-shadow: 0px 5px 20px #ac8eff;
+}
+
+cardImage[imgId="fifa20"],
+cardImage[imgId="fifa100"],
+cardImage[imgId="UFC10"],
+cardImage[imgId="UFC100"] {
+  box-shadow: 0px 5px 10px rgba(255, 0, 0, 0.5);
+}
+
+/*--------------Image Assigning-------------------*/
+cardImage[imgId="val10"] {
+  background-image: url("./Images/Riot/Val10.jpg");
+}
+
+cardImage[imgId="val100"] {
+  background-image: url("./Images/Riot/Val100.jpg");
+}
+
+cardImage[imgId="lol25"] {
+  background-image: url("./Images/Riot/Lol25.jpg");
+}
+
+cardImage[imgId="lol100"] {
+  background-image: url("./Images/Riot/Lol100.jpg");
+}
+
+cardImage[imgId="xbox25"] {
+  background-image: url("./Images/Console/Xbox25.png");
+  background-size: 100%;
+}
+
+cardImage[imgId="psn100"] {
+  background-image: url("./Images/Console/Psn100.jpg");
+  background-size: 83%;
+}
+
+cardImage[imgId="xboxgold"] {
+  background-image: url("./Images/Console/xboxgold.jpg");
+  background-size: 85%;
+}
+
+cardImage[imgId="psgold"] {
+  background-image: url("./Images/Console/psgold.jpg");
+  background-size: 85%;
+}
+
+cardImage[imgId="apple10"] {
+  background-image: url("./Images/Store/apple10.jpg");
+  background-size: 85%;
+}
+
+cardImage[imgId="apple50"] {
+  background-image: url("./Images/Store/apple50.jpg");
+  background-size: 89%;
+}
+
+cardImage[imgId="google50"] {
+  background-image: url("./Images/Store/google50.png");
+  background-size: 80%;
+}
+
+cardImage[imgId="google100"] {
+  background-image: url("./Images/Store/google100.png");
+  background-size: 105%;
+}
+
+cardImage[imgId="fifa20"] {
+  background-image: url("./Images/EA/fifa20.jpg");
+  background-size: 85%;
+}
+
+cardImage[imgId="fifa100"] {
+  background-image: url("./Images/EA/fifa100.jpg");
+  background-size: 80%;
+}
+
+cardImage[imgId="UFC10"] {
+  background-image: url("./Images/EA/UFC10.jpg");
+  background-size: 85%;
+}
+
+cardImage[imgId="UFC100"] {
+  background-image: url("./Images/EA/UFC100.jfif");
+  background-size: 85%;
+}
+
+/*--------------Image Hover Animation-------------------*/
+giftcard:hover cardImage[imgId="val10"],
+giftcard:hover cardImage[imgId="val100"],
+giftcard:hover cardImage[imgId="lol25"],
+giftcard:hover cardImage[imgId="lol100"],
+giftcard:hover cardImage[imgId="fifa20"],
+giftcard:hover cardImage[imgId="fifa100"],
+giftcard:hover cardImage[imgId="UFC10"],
+giftcard:hover cardImage[imgId="UFC100"] {
+  width: 70%;
+  height: 20rem;
+  transform: rotateX(-25deg) translateY(-2rem);
+  box-shadow: rgba(116, 171, 255, 0.836) 0px 10px 25px -5px,
+    rgba(0, 0, 0, 0.726) 0px 10px 20px -5px;
+}
+/*------------box-shadow animation for card Imange----------------*/
+giftcard:hover cardImage[imgId="val100"],
+giftcard:hover cardImage[imgId="UFC10"],
+giftcard:hover cardImage[imgId="UFC100"] {
+  box-shadow: rgba(184, 255, 151, 0.836) 0px 10px 25px -5px,
+    rgba(0, 0, 0, 0.726) 0px 10px 20px -5px;
+}
+
+giftcard:hover cardImage[imgId="lol25"] {
+  box-shadow: rgba(248, 255, 151, 0.836) 0px 10px 25px -5px,
+    rgba(0, 0, 0, 0.726) 0px 10px 20px -5px;
+}
+
+giftcard:hover cardImage[imgId="lol100"],
+giftcard:hover cardImage[imgId="fifa20"],
+giftcard:hover cardImage[imgId="fifa100"] {
+  box-shadow: rgba(255, 172, 151, 0.836) 0px 10px 25px -5px,
+    rgba(0, 0, 0, 0.726) 0px 10px 20px -5px;
+}
+
+Item[category="Store"] giftcard:hover cardImage,
+Item[category="Console"] giftcard:hover cardImage {
+  width: 6rem;
+  height: 6rem;
+  border-radius: 50%;
+}
+
+giftcard:hover cardImage[imgId="xbox25"] {
+  background-color: #107c10;
+  background-image: url("./Images/Console/X.png");
+  box-shadow: rgba(16, 141, 0, 0.836) 0px 10px 25px -5px,
+    rgba(0, 0, 0, 0.726) 0px 10px 20px -5px;
+  background-size: 77%;
+}
+
+giftcard:hover cardImage[imgId="xboxgold"] {
+  background-color: #ffd700;
+  background-image: url("./Images/Console/X.png");
+  box-shadow: rgba(255, 227, 67, 0.836) 0px 10px 25px -5px,
+    rgba(0, 0, 0, 0.726) 0px 10px 20px -5px;
+  background-size: 77%;
+}
+
+giftcard:hover cardImage[imgId="psn100"] {
+  background-color: #003791;
+  background-image: url("./Images/Console/P.png");
+  box-shadow: rgba(27, 88, 255, 0.836) 0px 10px 25px -5px,
+    rgba(0, 0, 0, 0.726) 0px 10px 20px -5px;
+  background-size: 80%;
+}
+
+giftcard:hover cardImage[imgId="psgold"] {
+  background-color: #ffd700;
+  background-image: url("./Images/Console/P.png");
+  box-shadow: rgba(255, 227, 67, 0.836) 0px 10px 25px -5px,
+    rgba(0, 0, 0, 0.726) 0px 10px 20px -5px;
+  background-size: 80%;
+}
+
+giftcard:hover cardImage[imgId="apple10"],
+giftcard:hover cardImage[imgId="apple50"] {
+  background-color: #d80077;
+  background-size: 75%;
+  background-image: url("./Images/Store/A.png");
+  box-shadow: rgba(240, 46, 170, 0.4) 0px 5px, rgba(240, 46, 170, 0.3) 0px 10px,
+    rgba(240, 46, 170, 0.2) 0px 15px, rgba(240, 46, 170, 0.1) 0px 20px,
+    rgba(240, 46, 170, 0.05) 0px 25px;
+}
+
+giftcard:hover cardImage[imgId="google50"],
+giftcard:hover cardImage[imgId="google100"] {
+  background-color: #04a1e9;
+  background-image: url("./Images/Store/G.png");
+  background-size: 60%;
+  box-shadow: rgba(77, 204, 221, 0.568) 0px 5px,
+    rgba(46, 211, 240, 0.3) 0px 10px, rgba(46, 227, 240, 0.2) 0px 15px,
+    rgba(46, 227, 240, 0.1) 0px 20px, rgba(46, 217, 240, 0.05) 0px 25px;
+}
+
+/*------------------------------------Content CSS styling, and animation-------------------------------------*/
+cardName {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+  font-size: 2rem;
+  font-family: "Patua One";
+}
+
+/*------------List styles given for card content----------------*/
+type,
+subscription,
+emailTime,
+value,
+price,
+numberOfUsers,
+DiscountVouchers,
+delivery,
+bonus,
+region,
+validity {
+  list-style: disc;
+  display: list-item;
+  flex-direction: column;
+}
+
+cardContent {
+  padding: 0rem 0rem 0rem 2rem;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  line-height: 1.5;
+  font-family: sans-serif;
+  font-family: "Noto Sans", sans-serif;
+  font-size: 1rem;
+  font-weight: bold;
+  margin-top: 1rem;
+  color: #1d0c0c;
+}
+/*----------Adding unique style for code data------------- */
+code {
+  color: rgb(0, 0, 0);
+  background-color: rgb(236, 236, 236);
+  border-radius: 3px;
+  padding: 0.2rem 0.3rem;
+  cursor: -webkit-grabbing;
+  font-size: 1.7rem;
+  font-family: "Libre Barcode 39 Extended Text", cursive;
+  font-weight: normal;
+  letter-spacing: 0.5px;
+}
+/*----------Adding unique style for cost data------------- */
+cost {
+  font-size: 1.2rem;
+  color: rgb(29, 175, 0);
+  margin-right: 0.6rem;
+  font-family: "Tinos", serif;
+}
+/*------------animation for card Imange----------------*/
+Item[category="RiotGames"] cardContent,
+Item[category="EAGames"] cardContent {
+  opacity: 0;
+  transform: translateY(-15rem);
+  transition-delay: 0.2s;
+  transition: all 0.4s;
+  transition-timing-function: cubic-bezier(0.46, 0.3, 0.26, 0.94);
+  z-index: 0;
+}
+
+Item[category="RiotGames"] giftcard:hover cardContent,
+Item[category="EAGames"] giftcard:hover cardContent {
+  transform: translateY(-2.5rem);
+  opacity: 1;
+  transition-delay: 0.2s;
+}
+
+Item[category="Console"] cardContent,
+Item[category="Store"] cardContent {
+  opacity: 0;
+  transform: scale(0);
+  transition-delay: 0.2s;
+  transition: all 0.4s;
+  transition-timing-function: cubic-bezier(0.46, 0.3, 0.26, 0.94);
+  z-index: 0;
+}
+
+Item[category="Console"] giftcard:hover cardContent,
+Item[category="Store"] giftcard:hover cardContent {
+  transform: scale(1) translateY(2rem);
+  opacity: 1;
+  transition-delay: 0.2s;
+}
+/*--------------Button styling and animations----------------*/
+buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+Item[category="Console"] buttons,
+Item[category="Store"] buttons {
+  margin-top: 4.3rem;
+}
+
+btn[btnFunction="Buy"],
+btn[btnFunction="Add"] {
+  border-radius: 10px;
+  font-size: 1rem;
+  color: rgb(0, 0, 0);
+  font-family: sans-serif;
+  font-weight: bold;
+  font-size: 0.9rem;
+  position: relative;
+  text-transform: uppercase;
+  background-color: rgb(255, 255, 255);
+  transition: all 0.5s;
+  text-align: center;
+  transform: translateY(-1.3rem);
+  padding: 0.3rem 0rem;
+  cursor: pointer;
+  flex: 1;
+  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.384);
+}
+
+btn[btnFunction="Add"] {
+  margin-left: 10px;
+}
+/*------------button hover effect----------------*/
+btn[btnFunction="Buy"]:before,
+btn[btnFunction="Add"]:before {
+  content: "";
+  top: 0;
+  right: 0;
+  border-radius: 100px;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  transition: all 1s;
+  background-color: rgb(255, 203, 203);
+  transform: scale(0);
+  opacity: 1;
+  z-index: -1;
+}
+
+btn[btnFunction="Buy"]:hover::before,
+btn[btnFunction="Add"]:hover::before {
+  transform: scale(2);
+  opacity: 0;
+}
+
+btn[btnFunction="Buy"]:hover,
+btn[btnFunction="Add"]:hover {
+  transform: translateY(-2rem);
+  color: rgb(255, 49, 49);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.384);
+}
+
+/*------------------------------------Store footer CSS-------------------------------------*/
+StoreFooter {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  height: 10vh;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border-top: 0.2em solid rgb(218, 218, 218);
+  padding: 0 5rem;
+}

@@ -1,0 +1,548 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--  connecting CSS -->
+<?xml-stylesheet href="catalog_20049037.css" type="text/css"?>
+<!--  connecting XSD -->
+<?xml-model href="catalog_20049037.xsd" type="application/xml"?>
+<Store>
+	<!-- element to store the informations about the store -->
+	<StoreDetails>
+		<!-- element to store the contact informations about the store -->
+		<contactInfo>
+			<icon iconName="ContactIcon" />
+			<phone>(044) 554-4206</phone>
+			<email>codemail@gmail.com</email>
+			<url>https://www.codemail.com</url>
+		</contactInfo>
+		<!-- element to store the location informations about the store -->
+		<addressInfo>
+			<icon iconName="LocationIcon" />
+			<country>United Kingdom</country>
+			<city>London</city>
+			<street>Piccadilly</street>
+		</addressInfo>
+	</StoreDetails>
+	<!-- element to store the informations about the trademarks of store -->
+	<StoreBanner>
+		<StoreLogo>
+			<logo size="15rem" />
+			<storeName>Code Mail</storeName>
+		</StoreLogo>
+		<shopMotto>Less Delays, More Yeheys!</shopMotto>
+		<Socials>
+			<social platform="Instagram" link="https://www.instagram.com/codemail/" />
+			<social platform="Facebook" link="https://www.facebook.com/codemail" />
+			<social platform="linkedIn" link="https://www.linkedin.com/codemail" />
+		</Socials>
+	</StoreBanner>
+	<!-- element to store the Store Items -->
+	<StoreItems>
+		<!-- element to store the Informations about the Items according to the category RiotGames-->
+		<Item category="RiotGames">
+			<!-- element to store the Brand Logos in to be dispayed in the section-->
+			<brandLogos bannerId="RiotBanner">
+				<brandLogo logoName="ValorantLogo" />
+				<brandLogo logoName="RiotLogo" />
+				<brandLogo logoName="LeagueLogo" />
+			</brandLogos>
+			<!-- element to store the collection of giftcards-->
+			<collection>
+				<!-- element to store the information about the giftcards of Riot company and game valorant-->
+				<giftcard cardId="valorant_10" company="Riot" game="Valorant">
+					<cardName>Valorant 10$</cardName>
+					<cardImage imgId="val10" />
+					<!-- element to store detailed info of giftcards-->
+					<cardContent>
+						<type>Digital Code</type>
+						<emailTime>Email time: 5-10 min</emailTime>
+						<value amount="1100">Game Value: 1100VP</value>
+						<!-- element to store the additional bonus that the games offer if available -->
+						<bonus bonusAmount="100">Game Bonus: + 100VP</bonus>
+						<price>
+							<cost currency="USD">US price: 10$</cost>
+							<cost currency="Pounds">UK price: 8£</cost>
+						</price>
+						<validity expiryDate="2024-06-20" duration="P36M">Validity: 36 Months</validity>
+						<numberOfUsers>
+							Number of Users:
+							<totalUsers>100000</totalUsers>
+						</numberOfUsers>
+						<!-- element to store the discount voucher codes if available -->
+						<DiscountVouchers>
+							Discount code:
+							<code>JEtt3</code>
+						</DiscountVouchers>
+					</cardContent>
+					<!-- element to buttons and their function -->
+					<buttons>
+						<btn btnFunction="Buy">Buy Now</btn>
+						<btn btnFunction="Add">Add to Cart</btn>
+					</buttons>
+				</giftcard>
+				<!-- element to store the information about the giftcards  of Riot company and game valorant-->
+				<giftcard cardId="valorant_100" company="Riot" game="Valorant">
+					<cardName>Valorant 100$</cardName>
+					<cardImage imgId="val100" />
+					<!-- element to store detailed info of giftcards-->
+					<cardContent>
+						<type>Digital Code</type>
+						<emailTime maxMinute="10">Email time: 5-10 min</emailTime>
+						<value amount="10000">Game Value: 10000VP</value>
+						<bonus bonusAmount="1000">Game Bonus: + 1000VP</bonus>
+						<price>
+							<cost currency="USD">US price: 100$</cost>
+							<cost currency="Pounds">UK price: 8£</cost>
+						</price>
+						<validity expiryDate="2025-06-20" duration="P36M">Validity: 36 Months</validity>
+						<numberOfUsers>
+							Number of Users:
+							<totalUsers>10000</totalUsers>
+						</numberOfUsers>
+						<DiscountVouchers>
+							Discount code:
+							<code>V1PER</code>
+							<code>V1G</code>
+						</DiscountVouchers>
+					</cardContent>
+					<buttons>
+						<btn btnFunction="Buy">Buy Now</btn>
+						<btn btnFunction="Add">Add to Cart</btn>
+					</buttons>
+				</giftcard>
+				<!-- element to store the information about the giftcards  of Riot company and game League of legends-->
+				<giftcard cardId="league_25" company="Riot" game="League Of Legends">
+					<cardName>L.O.L 25$</cardName>
+					<cardImage imgId="lol25" />
+					<!-- element to store detailed info of giftcards-->
+					<cardContent>
+						<type>Digital / Physical Code</type>
+						<emailTime minMinute="7" maxMinute="15">Email time: 7-15 min</emailTime>
+						<delivery>Physical Delivery: Free shipping</delivery>
+						<value amount="2500">Game Value: 2500RP</value>
+						<price>
+							<cost currency="USD">US price: 25$</cost>
+							<cost currency="Pounds">UK price: 20£</cost>
+						</price>
+						<validity expiryDate="2023-03-20" duration="P12M">Validity: 12 Months</validity>
+						<!-- element to store info about if the card is region locked in UK or not-->
+						<region lockCountry="UK">Region Lock: UK</region>
+						<numberOfUsers>
+							Number of Users:
+							<totalUsers>900000</totalUsers>
+						</numberOfUsers>
+						<DiscountVouchers availability="false">Discount code: N/A</DiscountVouchers>
+					</cardContent>
+					<buttons>
+						<btn btnFunction="Buy">Buy Now</btn>
+						<btn btnFunction="Add">Add to Cart</btn>
+					</buttons>
+				</giftcard>
+				<!-- element to store the information about the giftcards  of Riot company and game League of legends-->
+				<giftcard cardId="league_100" company="Riot" game="League Of Legends">
+					<cardName>L.O.L 100$</cardName>
+					<cardImage imgId="lol100" />
+					<!-- element to store detailed info of giftcards-->
+					<cardContent>
+						<type>Digital / Physical Code</type>
+						<emailTime minMinute="10" maxMinute="20">Email time: 10-20 min</emailTime>
+						<delivery>Physical Delivery: Free shipping</delivery>
+						<value amount="100000">Game Value: 100000RP</value>
+						<price>
+							<cost currency="USD">US price: 100$</cost>
+							<cost currency="Pounds">UK price: 77£</cost>
+						</price>
+						<validity expiryDate="2025-06-20" duration="P36M">Validity: 36 Months</validity>
+						<region lockCountry="UK">Region Lock: UK</region>
+						<numberOfUsers>
+							Number of Users:
+							<totalUsers>90000</totalUsers>
+						</numberOfUsers>
+						<DiscountVouchers availability="false">Discount code: N/A</DiscountVouchers>
+					</cardContent>
+					<buttons>
+						<btn btnFunction="Buy">Buy Now</btn>
+						<btn btnFunction="Add">Add to Cart</btn>
+					</buttons>
+				</giftcard>
+			</collection>
+		</Item>
+		<!-- element to store the Informations about the Items according to the category Console-->
+		<Item category="Console">
+			<!-- element to store the Brand Logos in to be dispayed in the section-->
+			<brandLogos bannerId="ConsoleBanner">
+				<brandLogo logoName="XboxLogo" />
+				<brandLogo logoName="ConsoleLogo" />
+				<brandLogo logoName="PlaystationLogo" />
+			</brandLogos>
+			<!-- element to store the collection of giftcards-->
+			<collection>
+				<!-- element to store the information about the giftcards of Microsoft company and for Xbox -->
+				<giftcard cardId="xbox_25" company="Microsoft">
+					<cardName>Xbox 25$</cardName>
+					<cardImage imgId="xbox25" />
+					<!-- element to store detailed info of giftcards-->
+					<cardContent>
+						<type>Digital / Physical Code</type>
+						<emailTime minMinute="7" maxMinute="15">Email time: 7-15 min</emailTime>
+						<!-- element to store delivery info if the card is digital/physical version-->
+						<delivery>Physical Delivery: Free shipping</delivery>
+						<value amount="25.00">Store Value: 25$</value>
+						<price>
+							<cost currency="USD">US price: 25$</cost>
+							<cost currency="Pounds">UK price: 20£</cost>
+						</price>
+						<validity expiryDate="2023-05-16" duration="P16M">Validity: 16 Months</validity>
+						<numberOfUsers>
+							Number of Users:
+							<totalUsers>100000</totalUsers>
+						</numberOfUsers>
+						<DiscountVouchers availability="false">Discount code: N/A</DiscountVouchers>
+					</cardContent>
+					<buttons>
+						<btn btnFunction="Buy">Buy Now</btn>
+						<btn btnFunction="Add">Add to Cart</btn>
+					</buttons>
+				</giftcard>
+				<!-- element to store the information about the giftcards of Microsoft company and Xbox-->
+				<giftcard cardId="xbox_gold" company="Microsoft">
+					<cardName>Xbox Gold</cardName>
+					<cardImage imgId="xboxgold" />
+					<!-- element to store detailed info of giftcards-->
+					<cardContent>
+						<type>Digital Code</type>
+						<!-- element to store info of subscription time of some giftcards-->
+						<subscription subscriptionTime="P3M">Subscription Time: 3 Months</subscription>
+						<emailTime minMinute="2" maxMinute="5">Email time: 2-5 min</emailTime>
+						<price>
+							<cost currency="USD">US price: 25$</cost>
+							<cost currency="Pounds">UK price: 20£</cost>
+						</price>
+						<validity expiryDate="2024-02-16" duration="P8M">Validity: 8 Months</validity>
+						<region lockCountry="UK">Region Lock: UK</region>
+						<numberOfUsers>
+							Number of Users:
+							<totalUsers>100000</totalUsers>
+						</numberOfUsers>
+						<DiscountVouchers>
+							Discount code:
+							<code discountPercent="8%">XB0XG0LD</code>
+						</DiscountVouchers>
+					</cardContent>
+					<buttons>
+						<btn btnFunction="Buy">Buy Now</btn>
+						<btn btnFunction="Add">Add to Cart</btn>
+					</buttons>
+				</giftcard>
+				<!-- element to store the information about the giftcards of Sony company and Playstation-->
+				<giftcard cardId="psn_100" company="Sony">
+					<cardName>Playstation 100$</cardName>
+					<cardImage imgId="psn100" />
+					<!-- element to store detailed info of giftcards-->
+					<cardContent>
+						<type>Digital / Physical Code</type>
+						<emailTime minMinute="7">Email time: 7-10 min</emailTime>
+						<delivery>Physical Delivery: Free shipping</delivery>
+						<value amount="100.00">Store Value: 100$</value>
+						<price>
+							<cost currency="USD">US price: 100$</cost>
+							<cost currency="Pounds">UK price: 78£</cost>
+						</price>
+						<validity expiryDate="2023-06-16" duration="P16M">Validity: 16 Months</validity>
+						<region lockCountry="UK">Region Lock: UK</region>
+						<numberOfUsers>
+							Number of Users:
+							<totalUsers>200000</totalUsers>
+						</numberOfUsers>
+						<DiscountVouchers availability="false">Discount code: N/A</DiscountVouchers>
+					</cardContent>
+					<buttons>
+						<btn btnFunction="Buy">Buy Now</btn>
+						<btn btnFunction="Add">Add to Cart</btn>
+					</buttons>
+				</giftcard>
+				<!-- element to store the information about the giftcards of Sony company and Playstation-->
+				<giftcard cardId="ps_gold" company="Sony">
+					<cardName>Playstation Gold</cardName>
+					<cardImage imgId="psgold" />
+					<!-- element to store detailed info of giftcards-->
+					<cardContent>
+						<type>Digital / Physical Code</type>
+						<!-- element to store info of subscription time of some giftcards-->
+						<subscription subscriptionTime="P12M">Subscription Time: 12 Months</subscription>
+						<emailTime maxMinute="15">Email time: 5-15 min</emailTime>
+						<price>
+							<cost currency="USD">US price: 59.99$</cost>
+							<cost currency="Pounds">UK price: 48£</cost>
+						</price>
+						<validity expiryDate="2023-03-20" duration="P12M">Validity: 12 Months</validity>
+						<region lockCountry="UK">Region Lock: UK</region>
+						<numberOfUsers>
+							Number of Users:
+							<totalUsers>50000</totalUsers>
+						</numberOfUsers>
+						<DiscountVouchers>
+							Discount code:
+							<code discountPercent="8%">PS4G0LD</code>
+						</DiscountVouchers>
+					</cardContent>
+					<buttons>
+						<btn btnFunction="Buy">Buy Now</btn>
+						<btn btnFunction="Add">Add to Cart</btn>
+					</buttons>
+				</giftcard>
+			</collection>
+		</Item>
+		<!-- element to store the Informations about the Items according to the category Store-->
+		<Item category="Store">
+			<brandLogos bannerId="StoreBanner">
+				<brandLogo logoName="AppleLogo" />
+				<brandLogo logoName="StoreLogo" />
+				<brandLogo logoName="GoogleLogo" />
+			</brandLogos>
+			<collection>
+				<!-- element to store the information about the giftcards of Apple company -->
+				<giftcard cardId="apple_10" company="Apple">
+					<cardName>Apple 10$</cardName>
+					<cardImage imgId="apple10" />
+					<!-- element to store detailed info of giftcards-->
+					<cardContent>
+						<type>Digital Code</type>
+						<emailTime minMinute="1" maxMinute="5">Email time: 1-5 min</emailTime>
+						<value amount="10.00">Store Value: 10$</value>
+						<price>
+							<cost currency="USD">US price: 10$</cost>
+							<cost currency="Pounds">UK price: 8£</cost>
+						</price>
+						<validity expiryDate="2024-06-16" duration="P16M">Validity: 16 Months</validity>
+						<numberOfUsers>
+							Number of Users:
+							<totalUsers>400000</totalUsers>
+						</numberOfUsers>
+						<DiscountVouchers>
+							Discount code:
+							<code discountPercent="2%">ApplE</code>
+						</DiscountVouchers>
+					</cardContent>
+					<buttons>
+						<btn btnFunction="Buy">Buy Now</btn>
+						<btn btnFunction="Add">Add to Cart</btn>
+					</buttons>
+				</giftcard>
+				<!-- element to store the information about the giftcards of Apple company -->
+				<giftcard cardId="apple_50" company="Apple">
+					<cardName>Apple 50$</cardName>
+					<cardImage imgId="apple50" />
+					<!-- element to store detailed info of giftcards-->
+					<cardContent>
+						<type>Digital / Physical Code</type>
+						<emailTime minMinute="7" maxMinute="10">Email time: 7-10 min</emailTime>
+						<delivery>Physical Delivery: Free shipping</delivery>
+						<value amount="50.00">Store Value: 50$</value>
+						<price>
+							<cost currency="USD">US price: 50$</cost>
+							<cost currency="Pounds">UK price: 38£</cost>
+						</price>
+						<validity expiryDate="2024-02-16" duration="P3M">Validity: 3 Months</validity>
+						<region lockCountry="UK">Region Lock: UK</region>
+						<numberOfUsers>
+							Number of Users:
+							<totalUsers>100000</totalUsers>
+						</numberOfUsers>
+						<DiscountVouchers availability="false">
+								Discount code: N/A
+							</DiscountVouchers>
+					</cardContent>
+					<buttons>
+						<btn btnFunction="Buy">Buy Now</btn>
+						<btn btnFunction="Add">Add to Cart</btn>
+					</buttons>
+				</giftcard>
+				<!-- element to store the information about the giftcards of Google company -->
+				<giftcard cardId="google_50" company="Google">
+					<cardName>Google Play 50£</cardName>
+					<cardImage imgId="google50" />
+					<!-- element to store detailed info of giftcards-->
+					<cardContent>
+						<type>Digital / Physical Code</type>
+						<emailTime minMinute="7" maxMinute="15">Email time: 7-15 min</emailTime>
+						<delivery>Physical Delivery: Free shipping</delivery>
+						<value amount="50.00">Store Value: 50£</value>
+						<price>
+							<cost currency="USD">US price: 64$</cost>
+							<cost currency="Pounds">UK price: 50£</cost>
+						</price>
+						<validity expiryDate="2024-06-16" duration="P16M">Validity: 16 Months</validity>
+						<region lockCountry="UK">Region Lock: UK</region>
+						<numberOfUsers>
+							Number of Users:
+							<totalUsers>200000</totalUsers>
+						</numberOfUsers>
+						<DiscountVouchers availability="false">
+								Discount code: N/A
+							</DiscountVouchers>
+					</cardContent>
+					<buttons>
+						<btn btnFunction="Buy">Buy Now</btn>
+						<btn btnFunction="Add">Add to Cart</btn>
+					</buttons>
+				</giftcard>
+				<!-- element to store the information about the giftcards of Google company -->
+				<giftcard cardId="google_100" company="Google">
+					<cardName>Google Play 100$</cardName>
+					<cardImage imgId="google100" />
+					<!-- element to store detailed info of giftcards-->
+					<cardContent>
+						<type>Digital Code</type>
+						<emailTime>Email time: 5-10 min</emailTime>
+						<value amount="100.00">Store Value: 100$</value>
+						<price>
+							<cost currency="USD">US price: 100$</cost>
+							<cost currency="Pounds">UK price: 78£</cost>
+						</price>
+						<validity expiryDate="2023-03-26" duration="P12M">Validity: 12 Months</validity>
+						<numberOfUsers>
+							Number of Users:
+							<totalUsers>50000</totalUsers>
+						</numberOfUsers>
+						<DiscountVouchers>
+							Discount code:
+							<code discountPercent="10%">G00GLE1</code>
+						</DiscountVouchers>
+					</cardContent>
+					<buttons>
+						<btn btnFunction="Buy">Buy Now</btn>
+						<btn btnFunction="Add">Add to Cart</btn>
+					</buttons>
+				</giftcard>
+			</collection>
+		</Item>
+		<!-- element to store the Informations about the Items according to the category EAGames-->
+		<Item category="EAGames">
+			<brandLogos bannerId="EABanner">
+				<brandLogo logoName="FifaLogo" />
+				<brandLogo logoName="EALogo" />
+				<brandLogo logoName="UFCLogo" />
+			</brandLogos>
+			<collection>
+				<!-- element to store the information about the giftcards of Electronic Arts company and game Fifa-->
+				<giftcard cardId="fifa_20" company="Electronic Arts" game="Fifa">
+					<cardName>Fifa 20$</cardName>
+					<cardImage imgId="fifa20" />
+					<!-- element to store detailed info of giftcards-->
+					<cardContent>
+						<type>Digital / Physical Code</type>
+						<emailTime minMinute="7" maxMinute="15">Email time: 7-15 min</emailTime>
+						<delivery>Physical Delivery: Free shipping</delivery>
+						<value amount="2200">Game Value: 2200Points</value>
+						<price>
+							<cost currency="USD">US price: 20$</cost>
+							<cost currency="Pounds">UK price: 15£</cost>
+						</price>
+						<validity expiryDate="2024-10-16" duration="P6M">Validity: 6 Months</validity>
+						<region lockCountry="UK">Region Lock: UK</region>
+						<numberOfUsers>
+							Number of Users:
+							<totalUsers>10000</totalUsers>
+						</numberOfUsers>
+						<DiscountVouchers availability="false">Discount code: N/A</DiscountVouchers>
+					</cardContent>
+					<buttons>
+						<btn btnFunction="Buy">Buy Now</btn>
+						<btn btnFunction="Add">Add to Cart</btn>
+					</buttons>
+				</giftcard>
+				<!-- element to store the information about the giftcards of Electronic Arts company and game Fifa-->
+				<giftcard cardId="fifa_100" company="Electronic Arts" game="Fifa">
+					<cardName>Fifa 100$</cardName>
+					<cardImage imgId="fifa100" />
+					<!-- element to store detailed info of giftcards-->
+					<cardContent>
+						<type>Digital Code</type>
+						<emailTime>Email time: 5-10 min</emailTime>
+						<value amount="12000">Game Value: 12000</value>
+						<bonus bonusAmount="2000">Game Bonus: + 2000Points</bonus>
+						<price>
+							<cost currency="USD">US price: 100$</cost>
+							<cost currency="Pounds">UK price: 78£</cost>
+						</price>
+						<validity expiryDate="2025-06-20" duration="P36M">Validity: 36 Months</validity>
+						<numberOfUsers>
+							Number of Users:
+							<totalUsers>10000</totalUsers>
+						</numberOfUsers>
+						<DiscountVouchers>
+							Discount code:
+							<code discountPercent="10%">F1FA22</code>
+						</DiscountVouchers>
+					</cardContent>
+					<buttons>
+						<btn btnFunction="Buy">Buy Now</btn>
+						<btn btnFunction="Add">Add to Cart</btn>
+					</buttons>
+				</giftcard>
+				<!-- element to store the information about the giftcards of Electronic Arts company and game UFC-->
+				<giftcard cardId="UFC_10" company="Electronic Arts" game="UFC">
+					<cardName>UFC 10$</cardName>
+					<cardImage imgId="UFC10" />
+					<!-- element to store detailed info of giftcards-->
+					<cardContent>
+						<type>Digital Code</type>
+						<emailTime>Email time: 5-10 min</emailTime>
+						<value amount="1050">Game Value: 1050Points</value>
+						<bonus bonusAmount="200">Game Bonus: + 200Points</bonus>
+						<price>
+							<cost currency="USD">US price: 10$</cost>
+							<cost currency="Pounds">UK price: 8£</cost>
+						</price>
+						<validity expiryDate="2023-03-16" duration="P12M">Validity: 12 Months</validity>
+						<numberOfUsers>
+							Number of Users:
+							<totalUsers>900000</totalUsers>
+						</numberOfUsers>
+						<DiscountVouchers>
+							Discount code:
+							<code discountPercent="12%">UFC4</code>
+						</DiscountVouchers>
+					</cardContent>
+					<buttons>
+						<btn btnFunction="Buy">Buy Now</btn>
+						<btn btnFunction="Add">Add to Cart</btn>
+					</buttons>
+				</giftcard>
+				<!-- element to store the information about the giftcards of Electronic Arts company and game UFC-->
+				<giftcard cardId="UFC_100" company="Electronic Arts" game="Fifa">
+					<cardName>UFC 100$</cardName>
+					<cardImage imgId="UFC100" />
+					<!-- element to store detailed info of giftcards-->
+					<cardContent>
+						<type>Digital Code</type>
+						<emailTime minMinute="1" maxMinute="5">Email time: 1-5 min</emailTime>
+						<value amount="12000">Game Value: 12000Points</value>
+						<bonus bonusAmount="1000">Game Bonus: + 1000Points</bonus>
+						<price>
+							<cost currency="USD">US price: 100$</cost>
+							<cost currency="Pounds">UK price: 78£</cost>
+						</price>
+						<validity expiryDate="2025-06-20" duration="P36M">Validity: 36 Months</validity>
+						<numberOfUsers>
+							Number of Users:
+							<totalUsers>90000</totalUsers>
+						</numberOfUsers>
+						<DiscountVouchers>
+							Discount code:
+							<code discountPercent="12%">UFC45</code>
+						</DiscountVouchers>
+					</cardContent>
+					<buttons>
+						<btn btnFunction="Buy">Buy Now</btn>
+						<btn btnFunction="Add">Add to Cart</btn>
+					</buttons>
+				</giftcard>
+			</collection>
+		</Item>
+	</StoreItems>
+	<!-- element to store info of the footer section of the shop-->
+	<StoreFooter>
+		Codemail is optimized for buyng giftcard at fast and reliable pace where you can find different giftcards of brand like Riot, Xbox, PS4, Apple, Google, Electronic Arts and many more coming.
+		&#169; Copyright 2021-2022 SDHAKZ, LLC Owned by Sharnam Dhakhwa 20049037 C13. Good Gift Cards,  Gaming Gift Cards, and Store Gift Cards are curated by SDHAKZ Network and issued by CivilBank &#169;. 
+	</StoreFooter>
+</Store>
